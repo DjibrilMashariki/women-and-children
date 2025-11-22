@@ -1,0 +1,38 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer Circle - Teal Background -->
+  <circle cx="100" cy="100" r="95" fill="#3EBFB3"/>
+  
+  <!-- Orange/Yellow Arc (Top Right) -->
+  <path d="M 100 5 A 95 95 0 0 1 195 100 L 100 100 Z" fill="#F4A236"/>
+  
+  <!-- Mother's Head -->
+  <ellipse cx="90" cy="75" rx="22" ry="28" fill="#2D1F1F"/>
+  
+  <!-- Mother's Orange Headwrap -->
+  <path d="M 68 60 Q 90 45 112 60 Q 115 50 112 45 Q 90 35 68 45 Q 65 50 68 60 Z" fill="#F4A236"/>
+  
+  <!-- Mother's Face (lighter brown) -->
+  <ellipse cx="90" cy="85" rx="18" cy="22" fill="#5D4037"/>
+  
+  <!-- Mother's Neck -->
+  <rect x="82" y="100" width="16" height="15" fill="#5D4037" rx="3"/>
+  
+  <!-- Mother's Body (Dark Brown) -->
+  <path d="M 70 115 Q 70 110 75 110 L 105 110 Q 110 110 110 115 L 115 180 Q 115 185 110 185 L 70 185 Q 65 185 65 180 Z" fill="#4A2F2F"/>
+  
+  <!-- Child's Head -->
+  <circle cx="120" cy="130" r="18" fill="#5D4037"/>
+  
+  <!-- Child's Body -->
+  <ellipse cx="120" cy="155" rx="14" ry="20" fill="#4A2F2F"/>
+  
+  <!-- Mother's Arms Holding Child -->
+  <path d="M 110 120 Q 105 125 105 135 Q 105 140 108 145" stroke="#4A2F2F" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M 70 120 Q 125 125 130 140 Q 132 145 130 150" stroke="#4A2F2F" stroke-width="8" fill="none" stroke-linecap="round"/>
+  
+  <!-- Pink/Magenta Bottom Arc -->
+  <path d="M 5 100 A 95 95 0 0 0 100 195 L 100 100 Z" fill="#C74B7A"/>
+  
+  <!-- Inner white ring for depth -->
+  <circle cx="100" cy="100" r="97" fill="none" stroke="white" stroke-width="2" opacity="0.3"/>
+</svg>

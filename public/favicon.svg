@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Logo favicon">
+  <circle cx="32" cy="32" r="31" fill="#fff" stroke="#000" stroke-width="4"/>
+  <circle cx="32" cy="32" r="28" fill="#00A8E8" stroke="#000" stroke-width="2"/>
+  <path d="M20 40 C22 34 28 30 34 30 C38 30 42 32 44 36 C40 38 34 39 28 39 C24 39 22 39 20 40 Z" fill="#FF6B4A" stroke="#000" stroke-width="2"/>
+  <circle cx="42" cy="30" r="6" fill="#9C552F" stroke="#000" stroke-width="2"/>
+  <path d="M40 30 L44 30" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+</svg>
