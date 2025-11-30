@@ -92,7 +92,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-brand-500 hover:text-brand-400 transition-colors text-sm"
+                      className="text-brand-500 hover:text-brand-400 hover:underline transition-colors text-sm"
                     >
                       {link.label}
                     </Link>
@@ -110,7 +110,7 @@ export function Footer() {
               <p className="text-neutral-400 text-xs uppercase tracking-wide mb-1">Email</p>
               <a
                 href={`mailto:${ORG_EMAIL}`}
-                className="text-brand-500 hover:text-brand-400 transition-colors font-medium"
+                className="text-brand-500 hover:text-brand-400 hover:underline transition-colors font-medium"
               >
                 {ORG_EMAIL}
               </a>
@@ -119,7 +119,7 @@ export function Footer() {
               <p className="text-neutral-400 text-xs uppercase tracking-wide mb-1">Phone</p>
               <a
                 href={`tel:${ORG_PHONE}`}
-                className="text-brand-500 hover:text-brand-400 transition-colors font-medium"
+                className="text-brand-500 hover:text-brand-400 hover:underline transition-colors font-medium"
               >
                 {ORG_PHONE}
               </a>

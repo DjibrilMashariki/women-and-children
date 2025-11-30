@@ -183,10 +183,12 @@ export default function ProgramsPage() {
                 description: "We track outcomes and continuously improve based on results.",
               },
             ].map((item, idx) => (
-              <Card key={idx} className="text-center dark:bg-neutral-800">
-                <div className="text-5xl font-bold text-brand-600 dark:text-brand-400 mb-4">{item.step}</div>
-                <CardTitle className="text-lg">{item.title}</CardTitle>
-                <p className="text-neutral-800 dark:text-neutral-300 text-sm mt-3">{item.description}</p>
+              <Card key={idx} className="text-center dark:bg-neutral-800 h-full flex flex-col">
+                <div className="flex-1">
+                  <div className="text-5xl font-bold text-brand-600 dark:text-brand-400 mb-4">{item.step}</div>
+                  <CardTitle className="text-lg">{item.title}</CardTitle>
+                  <p className="text-neutral-800 dark:text-neutral-300 text-sm mt-3">{item.description}</p>
+                </div>
               </Card>
             ))}
           </div>

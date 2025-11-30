@@ -207,7 +207,7 @@ export function Header() {
                               </p>
                               <Link
                                 href={ROUTES.PROGRAMS}
-                                className="inline-flex items-center text-xs font-bold text-brand-500 hover:text-brand-400 transition-colors"
+                                className="inline-flex items-center text-xs font-bold text-brand-500 hover:text-brand-400 hover:underline transition-colors"
                               >
                                 Learn More <ArrowRight className="ml-1 w-3 h-3" />
                               </Link>

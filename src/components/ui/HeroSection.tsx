@@ -26,7 +26,7 @@ export function HeroSection() {
             <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center gap-12">
 
                 {/* Text Content */}
-                <div className="flex-1 text-white space-y-8 animate-fade-in-up">
+                <div className="flex-1 text-white space-y-8 animate-fade-in-up text-center md:text-left">
                     <div className="space-y-4">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/20 border border-brand-primary/30 text-white text-sm font-medium backdrop-blur-sm">
                             <span className="text-brand-primary">We are the voice for the voiceless.</span>
@@ -42,7 +42,7 @@ export function HeroSection() {
                         </p>
                     </div>
 
-                    <div className="flex flex-wrap gap-4">
+                    <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                         <GradientButton size="lg" className="shadow-orange-glow">
                             Donate Now
                         </GradientButton>
@@ -51,7 +51,7 @@ export function HeroSection() {
                         </GradientButton>
                     </div>
 
-                    <div className="flex items-center gap-8 pt-8 border-t border-white/10">
+                    <div className="flex items-center gap-8 pt-8 border-t border-white/10 justify-center md:justify-start">
                         <div>
                             <p className="text-3xl font-bold font-display">10k+</p>
                             <p className="text-sm text-neutral-400">Lives Impacted</p>

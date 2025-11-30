@@ -91,7 +91,7 @@ export default function HomePage() {
             <p className="text-brand-600 dark:text-brand-primary font-semibold text-lg uppercase tracking-wide">
               What We Do
             </p>
-            <h2 className="text-4xl font-display font-bold mt-2 text-brand-primary">
+            <h2 className="text-4xl font-display font-bold mt-3 text-brand-primary">
               Our Impact
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 mt-4 max-w-2xl mx-auto">
@@ -116,7 +116,7 @@ export default function HomePage() {
             <p className="text-brand-600 dark:text-brand-primary font-semibold text-lg uppercase tracking-wide">
               Real Stories
             </p>
-            <h2 className="text-4xl font-display font-bold mt-2 text-neutral-900 dark:text-brand-primary">
+            <h2 className="text-4xl font-display font-bold mt-3 text-neutral-900 dark:text-brand-primary">
               Stories of Change
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 mt-4 max-w-2xl mx-auto">
