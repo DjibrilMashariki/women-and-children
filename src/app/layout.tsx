@@ -23,6 +23,8 @@ export const metadata: Metadata = {
   },
 };
 
+import ScrollToTop from "@/components/ui/ScrollToTop";
+
 export default function RootLayout({
   children,
 }: {
@@ -32,8 +34,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
         <Header />
-        <main>{children}</main>
+        <main className="animate-fade-in">{children}</main>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );

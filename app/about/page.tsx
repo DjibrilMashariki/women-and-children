@@ -269,10 +269,10 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href={ROUTES.DONATE}>
-              <Button size="lg">Make a Donation</Button>
+              <Button size="lg" style={{ color: '#ff6b35' }}>Make a Donation</Button>
             </Link>
             <Link href={ROUTES.GET_INVOLVED}>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" style={{ color: '#ff6b35' }}>
                 Get Involved
               </Button>
             </Link>

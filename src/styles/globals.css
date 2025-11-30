@@ -849,23 +849,6 @@ select:focus {
 
 /* Enhanced Dark Mode Card with subtle orange glow */
 .dark .shadow-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 0 20px rgba(251, 146, 60, 0.2);
-  border-color: rgb(251, 146, 60, 0.3);
-}
-
-/* Input fields - Dark Mode */
-.dark input,
-.dark textarea,
-.dark select {
-  background-color: rgb(23, 23, 23);
-  border-color: rgb(38, 38, 38);
-  color: rgb(250, 250, 250);
-}
-
-.dark input:focus,
-.dark textarea:focus,
-.dark select:focus {
-  box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.15), 0 0 0 2px rgb(251, 146, 60);
   border-color: rgb(251, 146, 60);
 }
 

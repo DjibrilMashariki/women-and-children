@@ -12,6 +12,8 @@ export function AboutHero() {
                 backgroundOpacity={0.35}
                 backgroundBlendMode="screen"
             />
+            {/* Pure black overlay for better text contrast */}
+            <div className="absolute inset-0 bg-black" />
 
             {/* Content Container */}
             <div className="relative z-10 container mx-auto px-4 text-center">
@@ -19,22 +21,22 @@ export function AboutHero() {
                     {/* Label */}
                     <div className="flex items-center justify-center gap-4 mb-4">
                         <div className="h-px w-12 bg-orange-500/50"></div>
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-sm font-bold tracking-wide uppercase">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/30 text-white text-sm font-bold tracking-wide uppercase">
                             About Us
                         </span>
                         <div className="h-px w-12 bg-orange-500/50"></div>
                     </div>
 
                     {/* Main Heading */}
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-neutral-900 dark:text-white leading-tight">
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight">
                         Our Story, <br />
-                        <GradientText className="from-orange-500 via-orange-600 to-red-600">
+                        <span className="text-white">
                             Vision & Mission
-                        </GradientText>
+                        </span>
                     </h1>
 
                     {/* Description */}
-                    <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto leading-relaxed font-light">
+                    <p className="text-xl md:text-2xl text-white max-w-2xl mx-auto leading-relaxed font-light">
                         Amplifying the voices of women and children in pursuit of peace, empowerment, and social justice.
                     </p>
                 </div>
