@@ -2,11 +2,6 @@
 
 /* Root Variables - WCV Orange/Black/White Theme */
 :root {
-  --font-inter: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  --font-poppins: "Poppins", sans-serif;
-  
   /* Enhanced WCV Brand Colors - Light Mode */
   --color-orange: #f97316;
   --color-orange-dark: #ea580c;
@@ -14,23 +9,23 @@
   --color-orange-very-light: #fef3c7;
   --color-black: #0d0d0d;
   --color-white: #ffffff;
-  
+
   /* Enhanced Background & Surface Colors - Light Mode */
   --bg-primary: #ffffff;
   --bg-secondary: #f9f9f9;
   --bg-tertiary: #f3f3f3;
   --surface: #ffffff;
   --surface-elevated: #ffffff;
-  
+
   /* Enhanced Text Colors - Light Mode */
   --text-primary: #0d0d0d;
   --text-secondary: #4a4a4a;
   --text-tertiary: #7a7a7a;
-  
+
   /* Enhanced Border Colors - Light Mode */
   --border-primary: #d9d9d9;
   --border-secondary: #cccccc;
-  
+
   /* Shadow definitions - Light Mode */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -46,23 +41,9 @@
   --color-orange-very-light: #fef3c7;
   --color-black: #0a0a0a;
   --color-white: #ffffff;
-  
+
   /* Enhanced Background & Surface Colors - Dark Mode */
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #1a1a1a;
-  --bg-tertiary: #2d2d2d;
-  --surface: #171717;
-  --surface-elevated: #262626;
-  
-  /* Enhanced Text Colors - Dark Mode */
-  --text-primary: #ffffff;
-  --text-secondary: #e5e5e5;
-  --text-tertiary: #bfbfbf;
-  
-  /* Enhanced Border Colors - Dark Mode */
-  --border-primary: #3a3a3a;
-  --border-secondary: #4d4d4d;
-  
+
   /* Shadow definitions - Dark Mode */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
@@ -75,7 +56,10 @@ html {
 }
 
 body {
-  background-color: var(--bg-primary);
+  --font-inter: var(--font-plus-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  --font-poppins: var(--font-outfit), "Poppins", sans-serif;
   color: var(--text-primary);
   font-family: var(--font-inter);
   margin: 0;
@@ -85,8 +69,8 @@ body {
 
 /* Dark mode body styles */
 .dark body {
-  background-color: #0a0a0a;
-  color: #fafafa;
+  color: var(--text-primary);
+  /* Uses Orange */
 }
 
 * {
@@ -114,7 +98,8 @@ h6 {
 .dark h4,
 .dark h5,
 .dark h6 {
-  color: #fafafa;
+  color: var(--text-primary);
+  /* Uses Orange */
 }
 
 h1 {
@@ -147,41 +132,6 @@ h6 {
   line-height: 1.25;
 }
 
-p {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* Links - Orange Theme */
-a {
-  color: rgb(249, 115, 22);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-a:hover {
-  color: rgb(234, 88, 12);
-}
-
-/* Dark mode links */
-.dark a {
-  color: #fbbf24;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.dark a:hover {
-  color: #fcd34d;
-}
-
-/* Button Reset */
-button {
-  cursor: pointer;
-}
-
-/* Form Elements - Orange Focus */
-input,
-textarea,
 select {
   font-family: var(--font-inter);
 }
@@ -206,8 +156,8 @@ select:focus {
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 @media (min-width: 640px) {
@@ -218,226 +168,191 @@ select:focus {
 }
 
 @media (min-width: 1024px) {
-  .container-max {
-    padding-left: 2rem;
-    padding-right: 2rem;
+
+  .gradient-primary {
+    background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
   }
-}
 
-/* Orange Gradient Text */
-.text-gradient-orange {
-  background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Orange Gradients */
-.gradient-orange {
-  background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
-}
-
-.gradient-orange-radial {
-  background: radial-gradient(circle, rgb(249, 115, 22), rgb(234, 88, 12));
-}
-
-/* Black Gradient */
-.gradient-black {
-  background: linear-gradient(to bottom right, rgb(23, 23, 23), rgb(10, 10, 10));
-}
-
-/* Legacy gradient (keep for backwards compatibility) */
-.gradient-primary {
-  background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
-}
-
-.gradient-secondary {
-  background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
-}
-
-.text-gradient {
-  background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Card with Orange Accent */
-.shadow-card {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s, border-color 0.3s;
-}
-
-.shadow-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 0 20px rgba(249, 115, 22, 0.3);
-}
-
-/* Dark mode card shadows */
-.dark .shadow-card {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-}
-
-.dark .shadow-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 0 20px rgba(251, 191, 36, 0.2);
-}
-
-/* Modern Animations */
-@keyframes blob {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
+  .gradient-secondary {
+    background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
   }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
+
+  .text-gradient {
+    background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
+
+  /* Card with Orange Accent */
+  .shadow-card {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, border-color 0.3s;
   }
-}
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+  .shadow-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 0 20px rgba(249, 115, 22, 0.3);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  /* Dark mode card shadows */
+  .dark .shadow-card {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
   }
-}
 
-@keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
+  .dark .shadow-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 0 20px rgba(251, 191, 36, 0.2);
   }
-  100% {
-    background-position: 1000px 0;
+
+  /* Modern Animations */
+  @keyframes blob {
+
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
   }
-}
 
-@keyframes textShine {
-  0% {
-    background-position: 0% 50%;
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  50% {
-    background-position: 100% 50%;
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+
+    100% {
+      background-position: 1000px 0;
+    }
   }
-  100% {
-    background-position: 0% 50%;
+
+  @keyframes textShine {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
   }
-}
 
-@keyframes logoGlow {
-  0%, 100% {
-    filter: drop-shadow(0 0 2px rgba(249, 115, 22, 0.3));
+  @keyframes logoGlow {
+
+    0%,
+    100% {
+      filter: drop-shadow(0 0 2px rgba(249, 115, 22, 0.3));
+    }
+
+    50% {
+      filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.6)) drop-shadow(0 0 12px rgba(249, 115, 22, 0.4));
+    }
   }
-  50% {
-    filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.6)) drop-shadow(0 0 12px rgba(249, 115, 22, 0.4));
+
+  @keyframes logoGlowDark {
+
+    0%,
+    100% {
+      filter: drop-shadow(0 0 2px rgba(251, 191, 36, 0.4));
+    }
+
+    50% {
+      filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.7)) drop-shadow(0 0 12px rgba(251, 191, 36, 0.5));
+    }
   }
-}
 
-@keyframes logoGlowDark {
-  0%, 100% {
-    filter: drop-shadow(0 0 2px rgba(251, 191, 36, 0.4));
+  @keyframes glowPulse {
+
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 40px rgba(249, 115, 22, 0.6);
+    }
   }
-  50% {
-    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.7)) drop-shadow(0 0 12px rgba(251, 191, 36, 0.5));
+
+  @keyframes glowPulseDark {
+
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 40px rgba(251, 191, 36, 0.5);
+    }
   }
-}
 
-@keyframes glowPulse {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+  .animate-blob {
+    animation: blob 7s infinite;
   }
-  50% {
-    box-shadow: 0 0 40px rgba(249, 115, 22, 0.6);
+
+  .animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out;
   }
-}
 
-@keyframes glowPulseDark {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+  .animation-delay-2000 {
+    animation-delay: 2s;
   }
-  50% {
-    box-shadow: 0 0 40px rgba(251, 191, 36, 0.5);
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
   }
-}
 
-.animate-blob {
-  animation: blob 7s infinite;
-}
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+    background-size: 1000px 100%;
+    background-position: 0 0;
+  }
 
-.animate-fadeInUp {
-  animation: fadeInUp 0.8s ease-out;
-}
+  .animate-orange-glow {
+    animation: glowPulse 2s ease-in-out infinite;
+  }
 
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
+  .dark .animate-orange-glow {
+    animation: glowPulseDark 2s ease-in-out infinite;
+  }
 
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
+  /* Shimmer Effect - Orange */
+  .shimmer-orange {
+    background: linear-gradient(90deg,
+        rgba(249, 115, 22, 0) 0%,
+        rgba(249, 115, 22, 0.2) 20%,
+        rgba(249, 115, 22, 0.5) 60%,
+        rgba(249, 115, 22, 0));
+    background-size: 200% auto;
+    animation: shimmer 2s linear infinite;
+  }
 
-.animate-shimmer {
-  animation: shimmer 2s infinite;
-  background-size: 1000px 100%;
-  background-position: 0 0;
-}
-
-.animate-orange-glow {
-  animation: glowPulse 2s ease-in-out infinite;
-}
-
-.dark .animate-orange-glow {
-  animation: glowPulseDark 2s ease-in-out infinite;
-}
-
-/* Shimmer Effect - Orange */
-.shimmer-orange {
-  background: linear-gradient(
-    90deg,
-    rgba(249, 115, 22, 0) 0%,
-    rgba(249, 115, 22, 0.2) 20%,
-    rgba(249, 115, 22, 0.5) 60%,
-    rgba(249, 115, 22, 0)
-  );
-  background-size: 200% auto;
-  animation: shimmer 2s linear infinite;
-}
-
-/* Dark mode shimmer */
-.dark .shimmer-orange {
-  background: linear-gradient(
-    90deg,
-    rgba(251, 191, 36, 0) 0%,
-    rgba(251, 191, 36, 0.3) 20%,
-    rgba(251, 191, 36, 0.6) 60%,
-    rgba(251, 191, 36, 0) 100%
-  );
-}
-
-.gradient-primary {
-  background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
-}
-
-.gradient-secondary {
-  background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
-}
-
-.text-gradient {
-  background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.shadow-card {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s;
-}
-
-.shadow-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  /* Dark mode shimmer */
+  .dark .shimmer-orange {
+    background: linear-gradient(90deg,
+        rgba(251, 191, 36, 0) 0%,
+        rgba(251, 191, 36, 0.3) 20%,
+        rgba(251, 191, 36, 0.6) 60%,
+        rgba(251, 191, 36, 0) 100%);
+  }
 }
 
 /* Accessibility */
@@ -547,14 +462,17 @@ select:focus {
 
 /* Mobile Hero Optimizations */
 @media (max-width: 768px) {
+
   /* Hero Section - Reduce text sizes for mobile */
   .hero-title {
-    font-size: 2.5rem !important; /* Down from text-8xl (6rem) */
+    font-size: 2.5rem !important;
+    /* Down from text-8xl (6rem) */
     line-height: 1.1 !important;
   }
 
   .hero-subtitle {
-    font-size: 1.125rem !important; /* text-lg */
+    font-size: 1.125rem !important;
+    /* text-lg */
     line-height: 1.5 !important;
   }
 
@@ -578,6 +496,7 @@ select:focus {
 
 /* Minimum Tap Target Size - 48px for all interactive elements */
 @media (max-width: 768px) {
+
   /* Buttons */
   button,
   .btn,
@@ -622,7 +541,8 @@ select:focus {
   input[type="radio"] {
     min-height: 24px;
     min-width: 24px;
-    margin: 12px; /* Adds padding to reach 48px total */
+    margin: 12px;
+    /* Adds padding to reach 48px total */
   }
 
   /* Slider handles */
@@ -649,7 +569,8 @@ select:focus {
   .pagination-dot {
     min-height: 48px;
     min-width: 48px;
-    padding: 12px; /* Inner dot can be smaller */
+    padding: 12px;
+    /* Inner dot can be smaller */
   }
 
   /* Close buttons, modals */
@@ -682,28 +603,33 @@ select:focus {
 /* Mobile Typography Adjustments */
 @media (max-width: 640px) {
   h1 {
-    font-size: 2rem; /* Down from 3rem */
+    font-size: 2rem;
+    /* Down from 3rem */
     line-height: 1.1;
   }
 
   h2 {
-    font-size: 1.75rem; /* Down from 2.25rem */
+    font-size: 1.75rem;
+    /* Down from 2.25rem */
     line-height: 1.2;
   }
 
   h3 {
-    font-size: 1.5rem; /* Down from 1.875rem */
+    font-size: 1.5rem;
+    /* Down from 1.875rem */
     line-height: 1.25;
   }
 
   h4 {
-    font-size: 1.25rem; /* Down from 1.5rem */
+    font-size: 1.25rem;
+    /* Down from 1.5rem */
     line-height: 1.25;
   }
 
   p {
     font-size: 1rem;
-    line-height: 1.6; /* Slightly taller for readability */
+    line-height: 1.6;
+    /* Slightly taller for readability */
   }
 
   /* Reduce spacing between sections on mobile */
@@ -721,6 +647,7 @@ select:focus {
 
 /* Touch-Friendly Hover States */
 @media (hover: none) and (pointer: coarse) {
+
   /* Remove hover effects on touch devices */
   *:hover {
     transform: none !important;
@@ -742,9 +669,11 @@ select:focus {
 
 /* Mobile Navigation Spacing */
 @media (max-width: 768px) {
+
   /* Add bottom padding to main content for fixed bottom nav */
   main {
-    padding-bottom: 80px; /* Space for bottom nav bar */
+    padding-bottom: 80px;
+    /* Space for bottom nav bar */
   }
 
   /* Hide desktop navigation on mobile */
@@ -760,6 +689,7 @@ select:focus {
 
 /* Landscape Mobile Optimization */
 @media (max-width: 896px) and (orientation: landscape) {
+
   /* Reduce vertical spacing in landscape */
   .hero-section {
     min-height: auto !important;
@@ -776,6 +706,7 @@ select:focus {
 
 /* Tablet Optimizations */
 @media (min-width: 768px) and (max-width: 1024px) {
+
   /* Adjust grid layouts for tablet */
   .grid-cols-3 {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -793,6 +724,7 @@ select:focus {
 
 /* Mobile Performance Optimizations */
 @media (max-width: 768px) {
+
   /* Reduce animation complexity on mobile */
   .animate-blob {
     animation: none;
@@ -822,6 +754,7 @@ select:focus {
 
 /* iOS Safari Fixes */
 @supports (-webkit-touch-callout: none) {
+
   /* Fix for iOS Safari viewport height */
   .full-screen-mobile {
     min-height: -webkit-fill-available;
@@ -836,15 +769,11 @@ select:focus {
   body {
     -webkit-overflow-scrolling: touch;
   }
-
-  /* Prevent bounce effect */
-  .no-bounce {
-    overscroll-behavior: contain;
-  }
 }
 
 /* Android Chrome Fixes */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
+
   /* Improve font rendering on Android */
   body {
     -webkit-font-smoothing: antialiased;
@@ -901,8 +830,8 @@ select:focus {
 }
 
 /* ========================================
-   DARK MODE STYLES
-   ======================================== */
+ DARK MODE STYLES
+ ======================================== */
 
 /* Scrollbar - Dark Mode */
 .dark ::-webkit-scrollbar-track {
@@ -1049,4 +978,9 @@ select:focus {
 /* Smooth theme transition */
 html.transitioning * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Core Values Section - Force black background in dark mode */
+.dark section.bg-neutral-50 {
+  background-color: rgb(0, 0, 0) !important;
 }

@@ -46,7 +46,7 @@ export function BeforeAfterSlider() {
   // Handle mouse drag
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isDragging) return;
-    
+
     const rect = e.currentTarget.getBoundingClientRect();
     const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
     const percent = Math.max(0, Math.min((x / rect.width) * 100, 100));
@@ -56,7 +56,7 @@ export function BeforeAfterSlider() {
   // Handle touch drag
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     if (!isDragging) return;
-    
+
     const rect = e.currentTarget.getBoundingClientRect();
     const x = Math.max(0, Math.min(e.touches[0].clientX - rect.left, rect.width));
     const percent = Math.max(0, Math.min((x / rect.width) * 100, 100));
@@ -106,7 +106,7 @@ export function BeforeAfterSlider() {
   return (
     <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700">
       {/* Header */}
-      <div className="bg-gradient-to-r from-primary-500 to-primary-600 dark:from-primary-600 dark:to-primary-700 px-8 py-6">
+      <div className="bg-gradient-to-r from-brand-500 to-brand-600 dark:from-brand-600 dark:to-brand-700 px-8 py-6">
         <h3 className="text-2xl font-black text-white mb-2">Transformation Stories</h3>
         <p className="text-white/90 text-sm">
           <span className="hidden md:inline">Drag the slider to see the impact of your support</span>
@@ -128,11 +128,10 @@ export function BeforeAfterSlider() {
                 flex-shrink-0 px-4 md:px-6 py-2 md:py-3 rounded-xl 
                 font-semibold text-xs md:text-sm transition-all duration-300
                 min-h-[48px] min-w-[120px]
-                ${
-                activeIndex === idx
-                  ? "bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg scale-105 dark:from-primary-600 dark:to-primary-700"
+                ${activeIndex === idx
+                  ? "bg-gradient-to-r from-brand-500 to-brand-600 text-white shadow-lg scale-105 dark:from-brand-600 dark:to-brand-700"
                   : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600"
-              }`}
+                }`}
             >
               {story.title}
             </button>
@@ -190,13 +189,13 @@ export function BeforeAfterSlider() {
             style={{ left: `${sliderPosition}%` }}
           >
             {/* Handle Circle - 48px min for mobile */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-white rounded-full shadow-2xl border-4 border-primary-500 flex items-center justify-center cursor-grab active:cursor-grabbing">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-white rounded-full shadow-2xl border-4 border-brand-500 flex items-center justify-center cursor-grab active:cursor-grabbing">
               {/* Arrows */}
               <div className="flex gap-0.5">
-                <svg className="w-4 h-4 md:w-3 md:h-3 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 md:w-3 md:h-3 text-brand-600" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
-                <svg className="w-4 h-4 md:w-3 md:h-3 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 md:w-3 md:h-3 text-brand-600" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                 </svg>
               </div>

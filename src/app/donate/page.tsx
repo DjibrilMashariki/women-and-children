@@ -22,10 +22,10 @@ export default function DonatePage() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex items-center py-20">
+      <section className="relative min-h-[60vh] bg-gradient-to-br from-brand-50 via-white to-secondary-50 flex items-center py-20">
         <div className="container-max">
           <div className="max-w-3xl">
-            <p className="text-primary-600 font-semibold text-lg uppercase tracking-wide">
+            <p className="text-brand-600 font-semibold text-lg uppercase tracking-wide">
               Make a Difference
             </p>
             <h1 className="text-5xl lg:text-6xl font-display font-bold text-neutral-900 dark:text-white leading-tight mt-4">
@@ -58,11 +58,10 @@ export default function DonatePage() {
                           setSelectedAmount(tier.amount);
                           setCustomAmount("");
                         }}
-                        className={`p-4 rounded-lg font-semibold transition-all border-2 ${
-                          selectedAmount === tier.amount && !customAmount
-                            ? "border-primary-600 bg-primary-50 text-primary-600"
-                            : "border-neutral-200 text-neutral-700 hover:border-primary-300"
-                        }`}
+                        className={`p-4 rounded-lg font-semibold transition-all border-2 ${selectedAmount === tier.amount && !customAmount
+                            ? "border-brand-600 bg-brand-50 text-brand-600"
+                            : "border-neutral-200 text-neutral-700 hover:border-brand-300"
+                          }`}
                       >
                         ${tier.amount}
                       </button>
@@ -86,7 +85,7 @@ export default function DonatePage() {
                           setCustomAmount(e.target.value);
                           setSelectedAmount(null);
                         }}
-                        className="w-full pl-8 pr-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        className="w-full pl-8 pr-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                       />
                     </div>
                   </div>
@@ -94,32 +93,32 @@ export default function DonatePage() {
 
                 {/* Impact Summary */}
                 {finalAmount && (
-                  <div className="p-4 bg-primary-50 rounded-lg border border-primary-200">
+                  <div className="p-4 bg-brand-50 rounded-lg border border-brand-200">
                     <p className="text-sm text-neutral-700 mb-2">
                       <span className="font-semibold">Your ${finalAmount} donation will:</span>
                     </p>
                     <ul className="space-y-2 text-sm text-neutral-800">
                       {finalAmount >= 25 && (
                         <li className="flex items-center gap-2">
-                          <FaCheck className="text-primary-600" size={14} />
+                          <FaCheck className="text-brand-600" size={14} />
                           Provide essential supplies for a family
                         </li>
                       )}
                       {finalAmount >= 50 && (
                         <li className="flex items-center gap-2">
-                          <FaCheck className="text-primary-600" size={14} />
+                          <FaCheck className="text-brand-600" size={14} />
                           Fund a full skills training session
                         </li>
                       )}
                       {finalAmount >= 100 && (
                         <li className="flex items-center gap-2">
-                          <FaCheck className="text-primary-600" size={14} />
+                          <FaCheck className="text-brand-600" size={14} />
                           Support a child&apos;s education for a month
                         </li>
                       )}
                       {finalAmount >= 250 && (
                         <li className="flex items-center gap-2">
-                          <FaCheck className="text-primary-600" size={14} />
+                          <FaCheck className="text-brand-600" size={14} />
                           Enable multiple community programs
                         </li>
                       )}
@@ -144,7 +143,7 @@ export default function DonatePage() {
                       onChange={(e) =>
                         setDonorInfo({ ...donorInfo, name: e.target.value })
                       }
-                      className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                     />
                   </div>
 
@@ -160,7 +159,7 @@ export default function DonatePage() {
                         onChange={(e) =>
                           setDonorInfo({ ...donorInfo, email: e.target.value })
                         }
-                        className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                       />
                     </div>
                     <div>
@@ -173,7 +172,7 @@ export default function DonatePage() {
                         onChange={(e) =>
                           setDonorInfo({ ...donorInfo, phone: e.target.value })
                         }
-                        className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                       />
                     </div>
                   </div>
@@ -189,7 +188,7 @@ export default function DonatePage() {
                       }
                       placeholder="Share why you're supporting us..."
                       rows={3}
-                      className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
+                      className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent resize-none"
                     />
                   </div>
 

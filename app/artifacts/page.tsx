@@ -133,7 +133,7 @@ export default function ArtifactsPage() {
           />
           {/* Enhanced gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-orange-900/90 via-orange-800/80 to-black/60" />
-          
+
           {/* Decorative corner accent */}
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-br from-orange-500 to-orange-600 opacity-20 blur-3xl pointer-events-none" />
         </div>
@@ -144,12 +144,12 @@ export default function ArtifactsPage() {
               ✨ Shop with Purpose
             </span>
             <h1 className="text-5xl lg:text-7xl font-display font-black text-white leading-tight">
-              Every Purchase <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-yellow-300">Empowers</span>
+              Every Purchase <span className="text-orange-600">Empowers</span>
             </h1>
             <p className="text-xl text-orange-100 mt-6 leading-relaxed">
               Discover beautiful handmade items crafted by women in our Economic Empowerment program. Your support helps them achieve financial independence and lift their families out of poverty.
             </p>
-            
+
             {/* Quick Impact Stats */}
             <div className="grid grid-cols-3 gap-4 lg:gap-6 mt-10">
               {[
@@ -160,19 +160,19 @@ export default function ArtifactsPage() {
                 <div key={stat.label} className="group relative">
                   {/* Glow effect on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500`} />
-                  
+
                   {/* Card */}
                   <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-4 lg:p-5 border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 hover:-translate-y-1">
                     {/* Icon with animation */}
                     <div className="text-4xl lg:text-5xl mb-3 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                       {stat.icon}
                     </div>
-                    
+
                     {/* Number with gradient */}
                     <p className={`text-3xl lg:text-4xl xl:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r ${stat.gradient} tabular-nums mb-1`}>
                       <AnimatedCounter end={stat.value} suffix={stat.suffix || "+"} />
                     </p>
-                    
+
                     {/* Label */}
                     <p className="text-xs lg:text-sm text-white/90 font-bold leading-tight">{stat.label}</p>
                   </div>
@@ -202,11 +202,10 @@ export default function ArtifactsPage() {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold transition-all duration-300 text-sm lg:text-base ${
-                  selectedCategory === cat.id
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold transition-all duration-300 text-sm lg:text-base ${selectedCategory === cat.id
                     ? "bg-orange-600 text-white shadow-lg shadow-orange-500/30 scale-105"
                     : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-neutral-900"
-                }`}
+                  }`}
               >
                 <span className="text-lg">{cat.icon}</span>
                 {cat.label}
@@ -225,67 +224,68 @@ export default function ArtifactsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArtifacts.map((artifact) => {
               const categoryIcon = ARTIFACT_CATEGORIES.find(c => c.id === artifact.category)?.icon || "✨";
-              
+
               return (
-              <Card key={artifact.id} hover className="group flex flex-col h-full border border-neutral-200 hover:border-orange-300 transition-all duration-500 overflow-hidden bg-white shadow-sm hover:shadow-xl">
-                {/* Product Icon/Image Placeholder */}
-                <div className="aspect-[4/3] relative overflow-hidden bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center group-hover:from-orange-100 group-hover:to-orange-200 transition-colors duration-500">
-                  <div className="text-8xl transform group-hover:scale-110 transition-transform duration-500 drop-shadow-sm">
-                    {categoryIcon}
-                  </div>
-                  
-                  {/* Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-neutral-900 uppercase tracking-wider shadow-sm">
-                      {ARTIFACT_CATEGORIES.find(c => c.id === artifact.category)?.label}
-                    </span>
-                  </div>
-                </div>
+                <Card key={artifact.id} hover className="group flex flex-col h-full border border-neutral-200 hover:border-orange-300 transition-all duration-500 overflow-hidden bg-white shadow-sm hover:shadow-xl">
+                  {/* Product Icon/Image Placeholder */}
+                  <div className="aspect-[4/3] relative overflow-hidden bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center group-hover:from-orange-100 group-hover:to-orange-200 transition-colors duration-500">
+                    <div className="text-8xl transform group-hover:scale-110 transition-transform duration-500 drop-shadow-sm">
+                      {categoryIcon}
+                    </div>
 
-                {/* Product Info */}
-                <div className="p-6 flex flex-col flex-grow">
-                  <div className="mb-4">
-                    <h3 className="text-xl font-bold text-neutral-900 mb-1 group-hover:text-orange-600 transition-colors">
-                      {artifact.name}
-                    </h3>
-                    <p className="text-sm text-orange-600 font-medium flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
-                      By {artifact.artisan}
-                    </p>
-                  </div>
-                  
-                  <p className="text-neutral-600 text-sm leading-relaxed mb-6 flex-grow">
-                    {artifact.description}
-                  </p>
-
-                  {/* Impact Badge */}
-                  <div className="p-3 bg-orange-50 rounded-xl border border-orange-100 mb-6">
-                    <div className="flex items-start gap-3">
-                      <span className="text-lg">❤️</span>
-                      <div>
-                        <p className="text-xs font-bold text-orange-800 uppercase tracking-wide mb-0.5">Your Impact</p>
-                        <p className="text-sm text-orange-700 font-medium">{artifact.impact}</p>
-                      </div>
+                    {/* Category Badge */}
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-neutral-900 uppercase tracking-wider shadow-sm">
+                        {ARTIFACT_CATEGORIES.find(c => c.id === artifact.category)?.label}
+                      </span>
                     </div>
                   </div>
 
-                  {/* Price and Action */}
-                  <div className="flex items-center justify-between gap-4 mt-auto pt-4 border-t border-neutral-100">
-                    <div>
-                      <p className="text-3xl font-black text-neutral-900">
-                        ${artifact.price}
+                  {/* Product Info */}
+                  <div className="p-6 flex flex-col flex-grow">
+                    <div className="mb-4">
+                      <h3 className="text-xl font-bold text-neutral-900 mb-1 group-hover:text-orange-600 transition-colors">
+                        {artifact.name}
+                      </h3>
+                      <p className="text-sm text-orange-600 font-medium flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                        By {artifact.artisan}
                       </p>
                     </div>
 
-                    <Link href={ROUTES.DONATE} className="flex-1">
-                      <Button size="sm" className="w-full bg-neutral-900 hover:bg-orange-600 text-white transition-colors duration-300 shadow-lg hover:shadow-orange-500/30">
-                        Support Artisan
-                      </Button>
-                    </Link>
+                    <p className="text-neutral-600 text-sm leading-relaxed mb-6 flex-grow">
+                      {artifact.description}
+                    </p>
+
+                    {/* Impact Badge */}
+                    <div className="p-3 bg-orange-50 rounded-xl border border-orange-100 mb-6">
+                      <div className="flex items-start gap-3">
+                        <span className="text-lg">❤️</span>
+                        <div>
+                          <p className="text-xs font-bold text-orange-800 uppercase tracking-wide mb-0.5">Your Impact</p>
+                          <p className="text-sm text-orange-700 font-medium">{artifact.impact}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Price and Action */}
+                    <div className="flex items-center justify-between gap-4 mt-auto pt-4 border-t border-neutral-100">
+                      <div>
+                        <p className="text-3xl font-black text-neutral-900">
+                          ${artifact.price}
+                        </p>
+                      </div>
+
+                      <Link href={ROUTES.DONATE} className="flex-1">
+                        <Button size="sm" className="w-full bg-neutral-900 hover:bg-orange-600 text-white transition-colors duration-300 shadow-lg hover:shadow-orange-500/30">
+                          Support Artisan
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              </Card>
-            )})}
+                </Card>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -294,15 +294,15 @@ export default function ArtifactsPage() {
       <section className="py-24 bg-neutral-900 text-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-orange-500 via-neutral-900 to-neutral-900" />
-        
+
         <div className="container-max relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               More Than Just a Product
             </h2>
             <p className="text-xl text-neutral-300 leading-relaxed">
-              When you purchase from our artisan shop, you&apos;re not just buying a beautiful object. 
-              You&apos;re directly funding the economic independence of women rebuilding their lives 
+              When you purchase from our artisan shop, you&apos;re not just buying a beautiful object.
+              You&apos;re directly funding the economic independence of women rebuilding their lives
               after conflict.
             </p>
           </div>
@@ -345,7 +345,7 @@ export default function ArtifactsPage() {
             Ready to Make a Difference?
           </h2>
           <p className="text-xl text-orange-100 mb-10 max-w-2xl mx-auto font-medium">
-            Your purchase empowers women, supports families, and rebuilds communities. 
+            Your purchase empowers women, supports families, and rebuilds communities.
             Start your journey of impact today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

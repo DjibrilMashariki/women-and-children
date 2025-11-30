@@ -83,16 +83,16 @@ export function LiveImpactCounter() {
   return (
     <div className="bg-gradient-to-br from-neutral-900 dark:from-neutral-900 to-neutral-800 dark:to-neutral-950 rounded-3xl overflow-hidden shadow-2xl border border-neutral-700 dark:border-neutral-800">
       {/* Header */}
-      <div className="bg-gradient-to-r from-primary-500 dark:from-orange-600 to-primary-600 dark:to-orange-500 px-8 py-6 relative overflow-hidden">
+      <div className="bg-gradient-to-r from-brand-500 dark:from-orange-600 to-brand-600 dark:to-orange-500 px-8 py-6 relative overflow-hidden">
         {/* Animated pulse effect */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-pulse" />
-        
+
         <div className="relative z-10 flex items-center justify-between">
           <div>
             <h3 className="text-2xl font-black text-white mb-1">Live Impact Dashboard</h3>
             <p className="text-white/90 text-sm">Real-time updates from our programs across the DRC</p>
           </div>
-          
+
           {/* Live indicator */}
           <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
             <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
@@ -105,31 +105,31 @@ export function LiveImpactCounter() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-8 bg-white dark:bg-neutral-900">
         {impactStats.map((stat, idx) => {
           const currentValue = calculateCurrentValue(stat);
-          
+
           return (
             <div
               key={idx}
-              className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-50 dark:from-neutral-800 to-white dark:to-neutral-900 p-6 border border-neutral-200 dark:border-neutral-700 hover:border-primary-500/50 dark:hover:border-orange-400/50 transition-all duration-500 hover:shadow-lg dark:hover:shadow-lg dark:hover:shadow-orange-500/20"
+              className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-50 dark:from-neutral-800 to-white dark:to-neutral-900 p-6 border border-neutral-200 dark:border-neutral-700 hover:border-brand-500/50 dark:hover:border-orange-400/50 transition-all duration-500 hover:shadow-lg dark:hover:shadow-lg dark:hover:shadow-orange-500/20"
             >
               {/* Gradient glow on hover */}
               <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 dark:group-hover:opacity-20 transition-opacity duration-500`} />
-              
+
               <div className="relative z-10">
                 {/* Icon */}
                 <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${stat.color} text-white mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                   {stat.icon}
                 </div>
-                
+
                 {/* Counter */}
                 <div className="mb-3">
-                  <div className={`text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r ${stat.color} tabular-nums`}>
-                    <AnimatedCounter 
-                      end={currentValue} 
+                  <div className={`text-4xl font-black text-white tabular-nums`}>
+                    <AnimatedCounter
+                      end={currentValue}
                       suffix={stat.unit}
                       duration={1000}
                     />
                   </div>
-                  
+
                   {/* Increment indicator */}
                   <div className="flex items-center gap-1 mt-2">
                     <svg className="w-3 h-3 text-emerald-400 animate-bounce" fill="currentColor" viewBox="0 0 20 20">
@@ -140,7 +140,7 @@ export function LiveImpactCounter() {
                     </span>
                   </div>
                 </div>
-                
+
                 {/* Label */}
                 <div className="text-sm text-neutral-600 dark:text-neutral-400 font-medium leading-tight">
                   {stat.label}

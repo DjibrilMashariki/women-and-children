@@ -8,9 +8,9 @@ interface DonationThermometerProps {
   title?: string;
 }
 
-export function DonationThermometer({ 
-  current, 
-  goal, 
+export function DonationThermometer({
+  current,
+  goal,
   currency = '$',
   title = 'Campaign Goal'
 }: DonationThermometerProps) {
@@ -24,12 +24,12 @@ export function DonationThermometer({
   return (
     <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 dark:bg-neutral-800 dark:border-neutral-700">
       <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center dark:text-white">{title}</h3>
-      
+
       <div className="relative">
         {/* Thermometer Container */}
         <div className="relative w-20 h-64 mx-auto bg-neutral-900 rounded-full overflow-hidden border-2 border-neutral-800 dark:bg-neutral-700 dark:border-neutral-600">
           {/* Mercury Fill - Orange Gradient */}
-          <div 
+          <div
             className="absolute bottom-0 w-full bg-gradient-to-t from-orange-600 via-orange-500 to-orange-400 rounded-full transition-all duration-2000 ease-out"
             style={{ height: `${percentage}%` }}
           >
@@ -44,7 +44,7 @@ export function DonationThermometer({
               ))}
             </div>
           </div>
-          
+
           {/* Percentage Label Inside */}
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="text-white font-bold text-lg drop-shadow-lg z-10">
@@ -52,7 +52,7 @@ export function DonationThermometer({
             </span>
           </div>
         </div>
-        
+
         {/* Bulb at bottom - Orange */}
         <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full shadow-lg border-4 border-white" />
       </div>
@@ -91,14 +91,14 @@ interface StatCardProps {
   color?: string;
 }
 
-export function StatCard({ 
-  icon, 
-  value, 
-  label, 
-  suffix = '', 
-  trend, 
+export function StatCard({
+  icon,
+  value,
+  label,
+  suffix = '',
+  trend,
   trendValue,
-  color = 'from-primary-500 to-primary-600'
+  color = 'from-brand-500 to-brand-600'
 }: StatCardProps) {
   const { count: animatedValue, startAnimation } = useAnimatedCounter(value, 1500);
 
@@ -113,9 +113,8 @@ export function StatCard({
           {icon}
         </div>
         {trend && trendValue && (
-          <div className={`flex items-center space-x-1 text-sm font-semibold ${
-            trend === 'up' ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
-          }`}>
+          <div className={`flex items-center space-x-1 text-sm font-semibold ${trend === 'up' ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
+            }`}>
             <span>{trend === 'up' ? '↑' : '↓'}</span>
             <span>{trendValue}%</span>
           </div>
@@ -184,7 +183,7 @@ export function ProgressChart({ data, title }: ProgressChartProps) {
             label={item.label}
             value={item.value}
             max={item.max}
-            color={item.color || 'bg-primary-500'}
+            color={item.color || 'bg-brand-500'}
             index={index}
           />
         ))}
@@ -201,10 +200,10 @@ interface LiveCounterProps {
   icon?: string;
 }
 
-export function LiveCounter({ 
-  startValue, 
-  increment, 
-  interval = 5000, 
+export function LiveCounter({
+  startValue,
+  increment,
+  interval = 5000,
   label,
   icon = '🎯'
 }: LiveCounterProps) {
@@ -219,7 +218,7 @@ export function LiveCounter({
   }, [increment, interval]);
 
   return (
-    <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-neutral-800 dark:to-neutral-700 px-6 py-3 rounded-full border border-primary-200 dark:border-neutral-700 shadow-sm">
+    <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-brand-50 to-secondary-50 dark:from-neutral-800 dark:to-neutral-700 px-6 py-3 rounded-full border border-brand-200 dark:border-neutral-700 shadow-sm">
       <span className="text-2xl">{icon}</span>
       <div>
         <div className="text-2xl font-bold text-gray-800 dark:text-white">

@@ -9,11 +9,11 @@ interface ProgressBarProps {
   showPercentage?: boolean;
 }
 
-export function ProgressBar({ 
-  label, 
-  value, 
-  max, 
-  color = 'bg-primary-500',
+export function ProgressBar({
+  label,
+  value,
+  max,
+  color = 'bg-brand-500',
   showPercentage = true
 }: ProgressBarProps) {
   const { count: animatedValue, startAnimation } = useAnimatedCounter(value, 2000);
@@ -49,17 +49,17 @@ interface HoverCardProps {
   className?: string;
 }
 
-export function HoverCard({ 
-  title, 
-  description, 
-  icon, 
+export function HoverCard({
+  title,
+  description,
+  icon,
   details,
   className = ''
 }: HoverCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div 
+    <div
       className={`relative group cursor-pointer ${className}`}
       onMouseEnter={() => setIsExpanded(true)}
       onMouseLeave={() => setIsExpanded(false)}
@@ -70,17 +70,16 @@ export function HoverCard({
           <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{title}</h3>
         </div>
         <p className="text-gray-600 dark:text-neutral-300 mb-4">{description}</p>
-        
+
         {/* Expandable Details */}
-        <div className={`transition-all duration-300 overflow-hidden ${
-          isExpanded ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
-        }`}>
+        <div className={`transition-all duration-300 overflow-hidden ${isExpanded ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
+          }`}>
           <div className="border-t border-gray-200 dark:border-neutral-700 pt-4 mt-4">
             <h4 className="font-medium text-gray-800 dark:text-white mb-2">What we provide:</h4>
             <ul className="space-y-1">
               {details.map((detail, index) => (
                 <li key={index} className="text-sm text-gray-600 dark:text-neutral-300 flex items-start">
-                  <span className="text-primary-500 dark:text-orange-400 mr-2">•</span>
+                  <span className="text-brand-500 dark:text-orange-400 mr-2">•</span>
                   {detail}
                 </li>
               ))}
@@ -100,12 +99,12 @@ interface ImpactMeterProps {
   color?: string;
 }
 
-export function ImpactMeter({ 
-  title, 
-  current, 
-  target, 
+export function ImpactMeter({
+  title,
+  current,
+  target,
   unit,
-  color = 'stroke-primary-500'
+  color = 'stroke-brand-500'
 }: ImpactMeterProps) {
   const { count: animatedCurrent, startAnimation } = useAnimatedCounter(current, 2000);
   const percentage = Math.min((animatedCurrent / target) * 100, 100);
@@ -169,18 +168,18 @@ interface ExpandableContentProps {
   className?: string;
 }
 
-export function ExpandableContent({ 
-  title, 
-  preview, 
-  content, 
-  className = '' 
+export function ExpandableContent({
+  title,
+  preview,
+  content,
+  className = ''
 }: ExpandableContentProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className={`border border-gray-200 dark:border-neutral-700 rounded-lg overflow-hidden ${className}`}>
       <button
-        className="w-full p-4 text-left bg-white dark:bg-neutral-800 hover:bg-gray-50 dark:hover:bg-neutral-750 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-orange-400"
+        className="w-full p-4 text-left bg-white dark:bg-neutral-800 hover:bg-gray-50 dark:hover:bg-neutral-750 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 dark:focus:ring-orange-400"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <div className="flex justify-between items-center">
@@ -188,16 +187,14 @@ export function ExpandableContent({
             <h3 className="font-semibold text-gray-800 dark:text-white">{title}</h3>
             <p className="text-sm text-gray-600 dark:text-neutral-400 mt-1">{preview}</p>
           </div>
-          <span className={`text-primary-500 dark:text-orange-400 transform transition-transform ${
-            isExpanded ? 'rotate-180' : ''
-          }`}>
+          <span className={`text-brand-500 dark:text-orange-400 transform transition-transform ${isExpanded ? 'rotate-180' : ''
+            }`}>
             ▼
           </span>
         </div>
       </button>
-      <div className={`bg-gray-50 dark:bg-neutral-750 transition-all duration-300 ${
-        isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-      } overflow-hidden`}>
+      <div className={`bg-gray-50 dark:bg-neutral-750 transition-all duration-300 ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        } overflow-hidden`}>
         <div className="p-4 border-t border-gray-200 dark:border-neutral-700">
           <p className="text-gray-700 dark:text-neutral-300 leading-relaxed">{content}</p>
         </div>

@@ -38,7 +38,7 @@ interface CardTitleProps {
 }
 
 export function CardTitle({ className, children }: CardTitleProps) {
-  return <h3 className={cn("text-xl font-bold text-neutral-900 dark:text-white", className)}>{children}</h3>;
+  return <h3 className={cn("text-xl font-bold text-neutral-900 dark:text-primary", className)}>{children}</h3>;
 }
 
 interface CardDescriptionProps {
@@ -47,7 +47,7 @@ interface CardDescriptionProps {
 }
 
 export function CardDescription({ className, children }: CardDescriptionProps) {
-  return <p className={cn("text-neutral-600 text-sm mt-1 dark:text-neutral-300", className)}>{children}</p>;
+  return <p className={cn("text-neutral-600 text-sm mt-1 dark:text-neutral-100", className)}>{children}</p>;
 }
 
 interface CardContentProps {

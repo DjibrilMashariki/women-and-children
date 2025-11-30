@@ -9,29 +9,29 @@ interface RippleButtonProps {
   disabled?: boolean;
 }
 
-export function RippleButton({ 
-  children, 
-  className = '', 
+export function RippleButton({
+  children,
+  className = '',
   onClick,
   variant = 'primary',
-  disabled = false 
+  disabled = false
 }: RippleButtonProps) {
   const { ripples, createRipple } = useRipple();
   const { isLoading, success, handleAction } = useLoadingState();
 
   const baseClasses = "relative overflow-hidden transition-all duration-300 font-semibold rounded-xl";
-  
+
   const variantClasses = {
-    primary: "bg-gradient-to-r from-primary-600 dark:from-orange-600 to-secondary-600 dark:to-orange-500 text-white hover:from-primary-700 dark:hover:from-orange-500 hover:to-secondary-700 dark:hover:to-orange-400 shadow-lg hover:shadow-xl dark:shadow-lg dark:shadow-orange-500/30 dark:hover:shadow-orange-500/50",
+    primary: "bg-gradient-to-r from-brand-600 dark:from-orange-600 to-secondary-600 dark:to-orange-500 text-white hover:from-brand-700 dark:hover:from-orange-500 hover:to-secondary-700 dark:hover:to-orange-400 shadow-lg hover:shadow-xl dark:shadow-lg dark:shadow-orange-500/30 dark:hover:shadow-orange-500/50",
     secondary: "bg-gradient-to-r from-orange-500 dark:from-orange-500 to-orange-600 dark:to-orange-600 text-white dark:text-neutral-900 hover:from-orange-600 dark:hover:from-orange-400 hover:to-orange-700 dark:hover:to-orange-500 shadow-lg hover:shadow-xl dark:shadow-lg",
-    outline: "border-2 border-primary-600 dark:border-orange-400 text-primary-600 dark:text-orange-400 hover:bg-primary-50 dark:hover:bg-neutral-800 hover:border-primary-700 dark:hover:border-orange-300"
+    outline: "border-2 border-brand-600 dark:border-orange-400 text-brand-600 dark:text-orange-400 hover:bg-brand-50 dark:hover:bg-neutral-800 hover:border-brand-700 dark:hover:border-orange-300"
   };
 
   const handleClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
     if (disabled || isLoading) return;
-    
+
     createRipple(event);
-    
+
     if (onClick) {
       if (onClick.constructor.name === 'AsyncFunction') {
         await handleAction(onClick as () => Promise<void>);
@@ -43,9 +43,8 @@ export function RippleButton({
 
   return (
     <button
-      className={`${baseClasses} ${variantClasses[variant]} ${className} ${
-        disabled ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'
-      } ${success ? 'bg-green-500 hover:bg-green-600' : ''}`}
+      className={`${baseClasses} ${variantClasses[variant]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'
+        } ${success ? 'bg-green-500 hover:bg-green-600' : ''}`}
       onClick={handleClick}
       disabled={disabled || isLoading}
     >
@@ -62,14 +61,14 @@ export function RippleButton({
           }}
         />
       ))}
-      
+
       {/* Loading State */}
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/10">
           <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
         </div>
       )}
-      
+
       {/* Success State */}
       {success && (
         <div className="absolute inset-0 flex items-center justify-center">
@@ -78,7 +77,7 @@ export function RippleButton({
           </svg>
         </div>
       )}
-      
+
       {/* Content */}
       <span className={`relative z-10 transition-opacity ${isLoading || success ? 'opacity-0' : 'opacity-100'}`}>
         {children}

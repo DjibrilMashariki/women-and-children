@@ -7,46 +7,46 @@ import { ROUTES, TEAM_DATA } from "@/lib/utils/constants";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
+import Hero from "@/components/sections/Hero";
+
 export default function AboutPage() {
   return (
     <div className="w-full">
-      {/* Hero Section with Dynamic Background Image Layer */}
-      <section className="relative min-h-[60vh] bg-white dark:bg-neutral-900 flex items-center py-20 overflow-hidden">
-        {/* Background Image Layer with Particle Effects */}
-        <ParticleField 
-          count={12}
-          backgroundImage="/Additionals/webview/photos/MG_2368-scaled.webp"
-          backgroundOpacity={0.25}
-          backgroundBlendMode="overlay"
-          className="opacity-30"
-        />
-
-        {/* Content Layer */}
-        <div className="container-max relative z-10">
-          <div className="max-w-3xl">
-            <p className="text-primary-600 font-semibold text-lg uppercase tracking-wide">
-              About Us
-            </p>
-            <h1 className="text-5xl lg:text-6xl font-display font-bold text-neutral-900 dark:text-white leading-tight mt-4">
-              Our Story, Vision & Mission
-            </h1>
-            <p className="text-xl text-neutral-800 dark:text-neutral-100 mt-6">
-              Since our founding, Women & Children has been dedicated to creating meaningful, lasting change in the lives of those most vulnerable in our communities.
-            </p>
-          </div>
+      {/* Hero Section */}
+      <Hero
+        badge="SINCE 2016"
+        title="Our Story, Vision & Mission"
+        backgroundImage="/images/about-hero.webp"
+        align="left"
+        titleClassName="text-brand-500"
+      >
+        <p className="text-xl text-neutral-100 max-w-2xl leading-relaxed">
+          Founded in Rushuru, North Kivu. Dedicated to defending and protecting women and children across the Democratic Republic of Congo.
+        </p>
+        <div className="flex flex-wrap gap-4 mt-8">
+          <Link href={ROUTES.PROGRAMS}>
+            <Button size="lg" className="bg-brand-600 hover:bg-brand-700 text-white border-none">
+              Read Our Story
+            </Button>
+          </Link>
+          <Link href={ROUTES.PROGRAMS}>
+            <Button variant="outline" size="lg" className="text-white border-white hover:bg-white/10">
+              View Programs
+            </Button>
+          </Link>
         </div>
-      </section>
+      </Hero>
 
       {/* Our Journey */}
       <section className="py-20 bg-white dark:bg-neutral-900">
         <div className="container-max">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="aspect-video bg-gradient-to-br from-primary-200 to-secondary-200 rounded-2xl shadow-lg flex items-center justify-center">
+            <div className="aspect-video bg-gradient-to-br from-brand-200 to-secondary-200 rounded-2xl shadow-lg flex items-center justify-center">
               <p className="text-neutral-400">Our Story Image</p>
             </div>
             <div className="space-y-6">
               <div>
-                <p className="text-primary-600 font-semibold uppercase tracking-wide mb-2">
+                <p className="text-brand-600 font-semibold uppercase tracking-wide mb-2">
                   Our Journey
                 </p>
                 <h2 className="text-4xl font-display font-bold text-neutral-900 dark:text-white mb-4">
@@ -126,11 +126,11 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {TEAM_DATA.map((member, idx) => (
               <Card key={idx} className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary-300 to-secondary-300 rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold text-2xl">
+                <div className="w-20 h-20 bg-gradient-to-br from-brand-300 to-secondary-300 rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold text-2xl">
                   {member.initials}
                 </div>
                 <CardTitle>{member.name}</CardTitle>
-                <p className="text-primary-600 font-semibold text-sm mt-1">{member.role}</p>
+                <p className="text-brand-600 font-semibold text-sm mt-1">{member.role}</p>
                 <p className="text-neutral-800 dark:text-neutral-300 text-sm mt-3">{member.bio}</p>
               </Card>
             ))}
@@ -139,7 +139,7 @@ export default function AboutPage() {
       </section>
 
       {/* Impact By Numbers */}
-      <section className="py-20 bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-brand-600 to-secondary-600 text-white">
         <div className="container-max">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-display font-bold">Our Impact</h2>

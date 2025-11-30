@@ -3,6 +3,8 @@ import { ORG_NAME } from "@/lib/utils/constants";
 import "@/styles/globals.css";
 import { ClientLayout } from "./ClientLayout";
 
+import { outfit, plusJakartaSans } from "./fonts";
+
 export const metadata: Metadata = {
   title: `${ORG_NAME} - Empowering Lives, Building Futures`,
   description:
@@ -29,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 transition-colors duration-300">
+      <body className={`${outfit.variable} ${plusJakartaSans.variable} font-sans bg-surface-light dark:bg-surface-dark text-neutral-900 dark:text-neutral-50 transition-colors duration-300`}>
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>

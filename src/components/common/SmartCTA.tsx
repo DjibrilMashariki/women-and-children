@@ -80,7 +80,7 @@ export function StickyDonationBar({ onDonate }: StickyDonationBarProps) {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-r from-primary-600 dark:from-orange-600 to-secondary-600 dark:to-orange-500 shadow-2xl dark:shadow-2xl dark:shadow-orange-500/30 animate-slideUp border-t border-transparent dark:border-orange-400/20">
+    <div className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-r from-brand-600 dark:from-orange-600 to-secondary-600 dark:to-orange-500 shadow-2xl dark:shadow-2xl dark:shadow-orange-500/30 animate-slideUp border-t border-transparent dark:border-orange-400/20">
       <div className="container-max py-2">
         <div className="flex items-center justify-between gap-4">
           <div className="text-white flex-1 min-w-0">
@@ -89,7 +89,7 @@ export function StickyDonationBar({ onDonate }: StickyDonationBarProps) {
           </div>
           <RippleButton
             variant="secondary"
-            className="bg-white dark:bg-neutral-100 text-primary-600 dark:text-neutral-900 hover:bg-gray-50 dark:hover:bg-white shadow-lg px-4 py-1.5 text-sm flex-shrink-0"
+            className="bg-white dark:bg-neutral-100 text-brand-600 dark:text-neutral-900 hover:bg-gray-50 dark:hover:bg-white shadow-lg px-4 py-1.5 text-sm flex-shrink-0"
             onClick={onDonate}
           >
             Donate Now
@@ -108,10 +108,10 @@ interface ContextualCTAProps {
   variant?: 'primary' | 'secondary' | 'accent';
 }
 
-export function ContextualCTA({ 
-  message, 
-  buttonText, 
-  onAction, 
+export function ContextualCTA({
+  message,
+  buttonText,
+  onAction,
   icon = '💡',
   variant = 'primary'
 }: ContextualCTAProps) {
@@ -120,7 +120,7 @@ export function ContextualCTA({
   if (isDismissed) return null;
 
   const bgColors = {
-    primary: 'from-primary-50 dark:from-neutral-800 to-primary-100 dark:to-neutral-750 border-primary-300 dark:border-orange-600/30',
+    primary: 'from-brand-50 dark:from-neutral-800 to-brand-100 dark:to-neutral-750 border-brand-300 dark:border-orange-600/30',
     secondary: 'from-secondary-50 dark:from-neutral-800 to-secondary-100 dark:to-neutral-750 border-secondary-300 dark:border-orange-600/30',
     accent: 'from-accent-50 dark:from-neutral-800 to-accent-100 dark:to-neutral-750 border-accent-300 dark:border-orange-600/30'
   };
@@ -158,10 +158,10 @@ interface SmartCTAManagerProps {
   enableStickyBar?: boolean;
 }
 
-export function SmartCTAManager({ 
-  onDonate, 
+export function SmartCTAManager({
+  onDonate,
   enableExitIntent = true,
-  enableStickyBar = true 
+  enableStickyBar = true
 }: SmartCTAManagerProps) {
   const [showExitIntent, setShowExitIntent] = useState(false);
   const [exitIntentShown, setExitIntentShown] = useState(false);

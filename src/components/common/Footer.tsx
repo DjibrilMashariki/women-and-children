@@ -3,14 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ROUTES, ORG_NAME, ORG_EMAIL, ORG_PHONE, SOCIAL_LINKS } from "@/lib/utils/constants";
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaHeart } from "react-icons/fa";
+import { Facebook, Twitter, Instagram, Linkedin, Heart } from "lucide-react";
 
 const SocialIcon = ({ icon: Icon, href }: { icon: React.ElementType; href: string }) => (
   <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="text-white hover:text-orange-500 transition-colors"
+    className="text-white hover:text-brand-500 transition-colors"
     aria-label="Social link"
   >
     <Icon size={20} />
@@ -74,10 +74,10 @@ export function Footer() {
               Empowering lives, building futures. Together, we create lasting change for women and children in need.
             </p>
             <div className="flex gap-4">
-              <SocialIcon icon={FaFacebook} href={SOCIAL_LINKS.facebook} />
-              <SocialIcon icon={FaTwitter} href={SOCIAL_LINKS.twitter} />
-              <SocialIcon icon={FaInstagram} href={SOCIAL_LINKS.instagram} />
-              <SocialIcon icon={FaLinkedin} href={SOCIAL_LINKS.linkedin} />
+              <SocialIcon icon={Facebook} href={SOCIAL_LINKS.facebook} />
+              <SocialIcon icon={Twitter} href={SOCIAL_LINKS.twitter} />
+              <SocialIcon icon={Instagram} href={SOCIAL_LINKS.instagram} />
+              <SocialIcon icon={Linkedin} href={SOCIAL_LINKS.linkedin} />
             </div>
           </div>
 
@@ -92,7 +92,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-orange-500 hover:text-orange-400 transition-colors text-sm"
+                      className="text-brand-500 hover:text-brand-400 transition-colors text-sm"
                     >
                       {link.label}
                     </Link>
@@ -110,7 +110,7 @@ export function Footer() {
               <p className="text-neutral-400 text-xs uppercase tracking-wide mb-1">Email</p>
               <a
                 href={`mailto:${ORG_EMAIL}`}
-                className="text-orange-500 hover:text-orange-400 transition-colors font-medium"
+                className="text-brand-500 hover:text-brand-400 transition-colors font-medium"
               >
                 {ORG_EMAIL}
               </a>
@@ -119,7 +119,7 @@ export function Footer() {
               <p className="text-neutral-400 text-xs uppercase tracking-wide mb-1">Phone</p>
               <a
                 href={`tel:${ORG_PHONE}`}
-                className="text-orange-500 hover:text-orange-400 transition-colors font-medium"
+                className="text-brand-500 hover:text-brand-400 transition-colors font-medium"
               >
                 {ORG_PHONE}
               </a>
@@ -140,7 +140,7 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-2 text-sm text-neutral-400">
             <span>Made with</span>
-            <FaHeart size={16} className="text-orange-500" />
+            <Heart size={16} className="text-brand-500" />
             <span>for those who need it most</span>
           </div>
         </div>

@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaHome, FaHeart, FaHandsHelping, FaEnvelope } from "react-icons/fa";
+import { Home, Heart, HeartHandshake, Mail } from "lucide-react";
 
 interface NavItem {
   label: string;
@@ -18,22 +18,22 @@ export const MobileNavigation: React.FC = () => {
     {
       label: "Home",
       href: "/",
-      icon: <FaHome className="w-6 h-6" />,
+      icon: <Home className="w-6 h-6" />,
     },
     {
       label: "Donate",
       href: "/donate",
-      icon: <FaHeart className="w-6 h-6" />,
+      icon: <Heart className="w-6 h-6" />,
     },
     {
       label: "Programs",
       href: "/programs",
-      icon: <FaHandsHelping className="w-6 h-6" />,
+      icon: <HeartHandshake className="w-6 h-6" />,
     },
     {
       label: "Contact",
       href: "/contact",
-      icon: <FaEnvelope className="w-6 h-6" />,
+      icon: <Mail className="w-6 h-6" />,
     },
   ];
 
@@ -63,10 +63,9 @@ export const MobileNavigation: React.FC = () => {
                   flex flex-col items-center justify-center gap-1
                   transition-all duration-300
                   min-h-[48px] min-w-[48px]
-                  ${
-                    active
-                      ? "text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-neutral-800"
-                      : "text-neutral-600 dark:text-neutral-400 hover:text-orange-500 dark:hover:text-orange-400 hover:bg-neutral-50 dark:hover:bg-neutral-800"
+                  ${active
+                    ? "text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-neutral-800"
+                    : "text-neutral-600 dark:text-neutral-400 hover:text-orange-500 dark:hover:text-orange-400 hover:bg-neutral-50 dark:hover:bg-neutral-800"
                   }
                 `}
                 aria-label={item.label}

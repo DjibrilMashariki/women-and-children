@@ -53,10 +53,10 @@ export default function ContactPage() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex items-center py-20">
+      <section className="relative min-h-[60vh] bg-gradient-to-br from-brand-50 via-white to-secondary-50 flex items-center py-20">
         <div className="container-max">
           <div className="max-w-3xl">
-            <p className="text-primary-600 font-semibold text-lg uppercase tracking-wide">
+            <p className="text-brand-600 font-semibold text-lg uppercase tracking-wide">
               Get in Touch
             </p>
             <h1 className="text-5xl lg:text-6xl font-display font-bold text-neutral-900 dark:text-white leading-tight mt-4">
@@ -74,13 +74,13 @@ export default function ContactPage() {
         <div className="container-max">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <Card className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
-                <FaPhone className="w-8 h-8 text-primary-600" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-100 rounded-full mb-4">
+                <FaPhone className="w-8 h-8 text-brand-600" />
               </div>
               <h3 className="text-lg font-bold text-neutral-900 mb-2">Phone</h3>
               <a
                 href={`tel:${ORG_PHONE}`}
-                className="text-primary-600 hover:text-primary-700 font-semibold"
+                className="text-brand-600 hover:text-brand-700 font-semibold"
               >
                 {ORG_PHONE}
               </a>
@@ -90,13 +90,13 @@ export default function ContactPage() {
             </Card>
 
             <Card className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
-                <FaEnvelope className="w-8 h-8 text-primary-600" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-100 rounded-full mb-4">
+                <FaEnvelope className="w-8 h-8 text-brand-600" />
               </div>
               <h3 className="text-lg font-bold text-neutral-900 mb-2">Email</h3>
               <a
                 href={`mailto:${ORG_EMAIL}`}
-                className="text-primary-600 hover:text-primary-700 font-semibold break-all"
+                className="text-brand-600 hover:text-brand-700 font-semibold break-all"
               >
                 {ORG_EMAIL}
               </a>
@@ -106,11 +106,11 @@ export default function ContactPage() {
             </Card>
 
             <Card className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
-                <FaMapMarkerAlt className="w-8 h-8 text-primary-600" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-100 rounded-full mb-4">
+                <FaMapMarkerAlt className="w-8 h-8 text-brand-600" />
               </div>
               <h3 className="text-lg font-bold text-neutral-900 mb-2">Address</h3>
-              <p className="text-primary-600 font-semibold text-sm">
+              <p className="text-brand-600 font-semibold text-sm">
                 {ORG_ADDRESS}
               </p>
               <p className="text-neutral-700 text-sm mt-2">
@@ -146,7 +146,7 @@ export default function ContactPage() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                       placeholder="Your name"
                     />
                   </div>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -175,7 +175,7 @@ export default function ContactPage() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                     placeholder="Your phone number"
                   />
                 </div>
@@ -190,7 +190,7 @@ export default function ContactPage() {
                       required
                       value={formData.type}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                     >
                       {CONTACT_TYPES.map((type) => (
                         <option key={type.id} value={type.id}>
@@ -209,7 +209,7 @@ export default function ContactPage() {
                       required
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                       placeholder="Subject of your inquiry"
                     />
                   </div>
@@ -225,7 +225,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
+                    className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent resize-none"
                     placeholder="Tell us more about your inquiry..."
                   />
                 </div>

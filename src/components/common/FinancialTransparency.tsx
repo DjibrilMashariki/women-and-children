@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaChartPie, FaHandHoldingHeart, FaCog, FaBullhorn, FaFileAlt, FaDownload } from "react-icons/fa";
+import { PieChart, HeartHandshake, Settings, Megaphone, FileText, Download } from "lucide-react";
 
 interface FundAllocation {
   category: string;
@@ -21,7 +21,7 @@ export const FinancialTransparency: React.FC = () => {
       percentage: 85,
       amount: "$2.1M",
       color: "bg-emerald-500",
-      icon: <FaHandHoldingHeart className="w-6 h-6" />,
+      icon: <HeartHandshake className="w-6 h-6" />,
       description: "Direct support to children, women, and families in the DRC",
     },
     {
@@ -29,7 +29,7 @@ export const FinancialTransparency: React.FC = () => {
       percentage: 10,
       amount: "$247K",
       color: "bg-blue-500",
-      icon: <FaCog className="w-6 h-6" />,
+      icon: <Settings className="w-6 h-6" />,
       description: "Essential operations, legal compliance, and infrastructure",
     },
     {
@@ -37,7 +37,7 @@ export const FinancialTransparency: React.FC = () => {
       percentage: 5,
       amount: "$124K",
       color: "bg-orange-500",
-      icon: <FaBullhorn className="w-6 h-6" />,
+      icon: <Megaphone className="w-6 h-6" />,
       description: "Donor outreach, campaigns, and community engagement",
     },
   ];
@@ -57,7 +57,7 @@ export const FinancialTransparency: React.FC = () => {
             Where Your Money Goes
           </h3>
           <p className="text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
-            Every dollar is tracked, audited, and allocated to maximize impact. 
+            Every dollar is tracked, audited, and allocated to maximize impact.
             See exactly how we invest in lasting change.
           </p>
         </div>
@@ -82,7 +82,7 @@ export const FinancialTransparency: React.FC = () => {
                   onMouseEnter={() => setHoveredIndex(0)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 />
-                
+
                 {/* Administrative (10%) - Blue */}
                 <circle
                   cx="100"
@@ -97,7 +97,7 @@ export const FinancialTransparency: React.FC = () => {
                   onMouseEnter={() => setHoveredIndex(1)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 />
-                
+
                 {/* Fundraising (5%) - Orange */}
                 <circle
                   cx="100"
@@ -116,7 +116,7 @@ export const FinancialTransparency: React.FC = () => {
 
               {/* Center Info */}
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <FaChartPie className="text-neutral-400 dark:text-neutral-600 w-12 h-12 mb-2" />
+                <PieChart className="text-neutral-400 dark:text-neutral-600 w-12 h-12 mb-2" />
                 <p className="text-4xl font-bold text-neutral-900 dark:text-white">{totalRevenue}</p>
                 <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-1">Total Revenue {fiscalYear}</p>
               </div>
@@ -154,8 +154,8 @@ export const FinancialTransparency: React.FC = () => {
                 className={`
                   group relative overflow-hidden rounded-2xl border-2 p-6
                   transition-all duration-300 cursor-pointer
-                  ${hoveredIndex === index 
-                    ? 'border-neutral-900 dark:border-orange-400 shadow-xl dark:shadow-2xl scale-105 bg-white dark:bg-neutral-750' 
+                  ${hoveredIndex === index
+                    ? 'border-neutral-900 dark:border-orange-400 shadow-xl dark:shadow-2xl scale-105 bg-white dark:bg-neutral-750'
                     : 'border-neutral-200 dark:border-neutral-700 hover:border-neutral-300 dark:hover:border-neutral-600 hover:shadow-lg dark:hover:shadow-xl bg-white dark:bg-neutral-800'
                   }
                 `}
@@ -206,7 +206,7 @@ export const FinancialTransparency: React.FC = () => {
             {/* Download Report CTA */}
             <div className="mt-8 p-6 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-neutral-800 dark:to-neutral-850 rounded-2xl border border-orange-200 dark:border-orange-600">
               <div className="flex items-center gap-4">
-                <FaFileAlt className="text-orange-600 dark:text-orange-400 w-8 h-8" />
+                <FileText className="text-orange-600 dark:text-orange-400 w-8 h-8" />
                 <div className="flex-1">
                   <h5 className="font-bold text-neutral-900 dark:text-white mb-1">
                     Full Financial Report
@@ -216,7 +216,7 @@ export const FinancialTransparency: React.FC = () => {
                   </p>
                 </div>
                 <button className="flex items-center gap-2 px-4 py-2 bg-orange-600 hover:bg-orange-700 dark:bg-orange-500 dark:hover:bg-orange-600 text-white rounded-lg transition-colors duration-300">
-                  <FaDownload className="w-4 h-4" />
+                  <Download className="w-4 h-4" />
                   <span className="font-semibold">Download</span>
                 </button>
               </div>
@@ -227,10 +227,10 @@ export const FinancialTransparency: React.FC = () => {
         {/* Trust Footer */}
         <div className="mt-16 text-center p-6 bg-neutral-50 dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-700">
           <p className="text-neutral-600 dark:text-neutral-300">
-            <span className="font-semibold text-neutral-900 dark:text-white">Audited by:</span> 
+            <span className="font-semibold text-neutral-900 dark:text-white">Audited by:</span>
             {" "}Thompson & Associates, LLP (Independent Certified Public Accountants)
             {" "}•{" "}
-            <span className="font-semibold text-neutral-900 dark:text-white">Last Audit:</span> 
+            <span className="font-semibold text-neutral-900 dark:text-white">Last Audit:</span>
             {" "}March 2025
           </p>
         </div>

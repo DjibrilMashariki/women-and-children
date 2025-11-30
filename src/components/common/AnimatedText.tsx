@@ -8,11 +8,11 @@ interface AnimatedCounterProps {
   className?: string;
 }
 
-export function AnimatedCounter({ 
-  end, 
-  duration = 2000, 
-  suffix = '', 
-  className = '' 
+export function AnimatedCounter({
+  end,
+  duration = 2000,
+  suffix = '',
+  className = ''
 }: AnimatedCounterProps) {
   const { count, startAnimation, isVisible } = useAnimatedCounter(end, duration);
   const ref = useRef<HTMLSpanElement>(null);
@@ -40,8 +40,8 @@ export function AnimatedCounter({
   }, [startAnimation, isVisible]);
 
   return (
-    <span 
-      ref={ref} 
+    <span
+      ref={ref}
       className={`inline-block font-bold tabular-nums ${className}`}
     >
       {count.toLocaleString()}{suffix}
@@ -56,14 +56,14 @@ interface GradientTextProps {
   className?: string;
 }
 
-export function GradientText({ 
-  children, 
-  gradient = 'from-primary-600 to-secondary-600',
+export function GradientText({
+  children,
+  gradient = 'from-brand-600 to-secondary-600',
   darkGradient = 'dark:from-orange-400 dark:to-orange-500',
   className = ''
 }: GradientTextProps) {
   return (
-    <span 
+    <span
       className={`inline-block bg-gradient-to-r ${gradient} ${darkGradient} bg-clip-text text-transparent ${className}`}
     >
       {children}

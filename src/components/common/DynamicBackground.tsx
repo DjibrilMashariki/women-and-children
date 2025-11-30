@@ -11,16 +11,16 @@ interface FloatingShapeProps {
   index?: number;
 }
 
-export function FloatingShape({ 
-  size = 40, 
-  color = 'bg-primary-200', 
-  duration = 8, 
+export function FloatingShape({
+  size = 40,
+  color = 'bg-brand-200',
+  duration = 8,
   delay = 0,
   shape = 'circle',
   index = 0,
 }: FloatingShapeProps) {
   const [mounted, setMounted] = useState(false);
-  
+
   // Use deterministic positioning based on index to avoid hydration mismatches
   const [position] = useState(() => {
     if (typeof window === 'undefined') {
@@ -45,7 +45,7 @@ export function FloatingShape({
 
   // Dark mode color mappings
   const darkColorMap: { [key: string]: string } = {
-    'bg-primary-200': 'dark:bg-primary-900',
+    'bg-brand-200': 'dark:bg-brand-900',
     'bg-secondary-200': 'dark:bg-secondary-900',
     'bg-accent-200': 'dark:bg-accent-900'
   };
@@ -75,26 +75,26 @@ interface ParticleFieldProps {
   backgroundBlendMode?: 'multiply' | 'screen' | 'overlay' | 'darken' | 'lighten';
 }
 
-export function ParticleField({ 
-  count = 15, 
+export function ParticleField({
+  count = 15,
   className = '',
   backgroundImage,
   backgroundOpacity = 0.3,
   backgroundBlendMode = 'overlay'
 }: ParticleFieldProps) {
   const [mounted, setMounted] = useState(false);
-  
+
   // Use deterministic particles based on count to avoid hydration mismatches
   const [particles] = useState(() => {
     const shapes = ['circle', 'square', 'triangle'] as const;
-    const colors = ['bg-primary-200', 'bg-secondary-200', 'bg-accent-200'];
-    
+    const colors = ['bg-brand-200', 'bg-secondary-200', 'bg-accent-200'];
+
     // Create a simple seeded random function
     const seededRandom = (seed: number) => {
       const x = Math.sin(seed) * 10000;
       return x - Math.floor(x);
     };
-    
+
     return Array.from({ length: count }, (_, i) => {
       const seed = i * 2654435761; // Large prime for good distribution
       return {
@@ -124,7 +124,7 @@ export function ParticleField({
           }}
         />
       )}
-      
+
       {/* Particles Layer - renders on top of background */}
       {mounted && particles.map((particle, i) => (
         <FloatingShape
@@ -141,14 +141,14 @@ export function ParticleField({
   );
 }
 
-export function ScrollParallax({ 
-  children, 
-  speed = 0.5, 
-  className = '' 
-}: { 
-  children: React.ReactNode; 
-  speed?: number; 
-  className?: string; 
+export function ScrollParallax({
+  children,
+  speed = 0.5,
+  className = ''
+}: {
+  children: React.ReactNode;
+  speed?: number;
+  className?: string;
 }) {
   const [offset, setOffset] = useState(0);
 

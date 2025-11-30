@@ -4,7 +4,8 @@ import { Button } from "@/components/common/Button";
 import { Card } from "@/components/common/Card";
 import { CONTACT_TYPES, ORG_EMAIL, ORG_PHONE, ORG_ADDRESS } from "@/lib/utils/constants";
 import { useState } from "react";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
+import Image from "next/image";
+import { Phone, Mail, MapPin, Send } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -50,17 +51,33 @@ export default function ContactPage() {
 
   return (
     <div className="w-full">
-      {/* Hero Section */}
-      <section className="relative min-h-[60vh] bg-gradient-to-br from-orange-50 via-white to-orange-100 flex items-center py-20">
-        <div className="container-max">
+      {/* Hero Section - Standardized */}
+      <section className="relative min-h-[60vh] flex items-center py-20 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/programs/MG_2304-scaled.webp"
+            alt="Contact Us"
+            fill
+            priority
+            className="object-cover w-full h-full"
+            quality={90}
+          />
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-neutral-900/90 via-neutral-900/70 to-transparent" />
+        </div>
+
+        <div className="container-max relative z-10">
           <div className="max-w-3xl">
-            <p className="text-orange-600 font-semibold text-lg uppercase tracking-wide">
-              Get in Touch
-            </p>
-            <h1 className="text-5xl lg:text-6xl font-display font-bold text-neutral-900 leading-tight mt-4">
-              Contact Women and Children&apos;s Voice
+            <div className="inline-block px-4 py-1.5 bg-orange-600/20 backdrop-blur-md border border-orange-500/30 rounded-full mb-6">
+              <span className="text-orange-400 font-bold text-sm uppercase tracking-wider">
+                Get in Touch
+              </span>
+            </div>
+            <h1 className="text-5xl lg:text-7xl font-display font-black text-white leading-tight mb-6">
+              Contact Us
             </h1>
-            <p className="text-xl text-neutral-600 mt-6">
+            <p className="text-xl text-neutral-200 leading-relaxed max-w-2xl">
               Have questions, want to partner with us, or support our work? We&apos;d love to hear from you.
             </p>
           </div>
@@ -73,7 +90,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <Card className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
-                <FaPhone className="w-8 h-8 text-primary-600" />
+                <Phone className="w-8 h-8 text-primary-600" />
               </div>
               <h3 className="text-lg font-bold text-neutral-900 mb-2">Phone</h3>
               <a
@@ -89,7 +106,7 @@ export default function ContactPage() {
 
             <Card className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
-                <FaEnvelope className="w-8 h-8 text-primary-600" />
+                <Mail className="w-8 h-8 text-primary-600" />
               </div>
               <h3 className="text-lg font-bold text-neutral-900 mb-2">Email</h3>
               <a
@@ -105,7 +122,7 @@ export default function ContactPage() {
 
             <Card className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
-                <FaMapMarkerAlt className="w-8 h-8 text-primary-600" />
+                <MapPin className="w-8 h-8 text-primary-600" />
               </div>
               <h3 className="text-lg font-bold text-neutral-900 mb-2">Address</h3>
               <p className="text-primary-600 font-semibold text-sm">
@@ -234,7 +251,7 @@ export default function ContactPage() {
                   isLoading={isLoading}
                   disabled={isLoading}
                 >
-                  <FaPaperPlane className="mr-2" />
+                  <Send className="mr-2" />
                   Send Message
                 </Button>
               </form>
@@ -286,7 +303,7 @@ export default function ContactPage() {
           <p className="text-center text-neutral-600 mb-12 max-w-2xl mx-auto">
             Follow our work and stay updated on events, impact stories, and opportunities to get involved
           </p>
-          
+
           <div className="flex flex-wrap justify-center gap-6 mb-16">
             <a
               href="https://web.facebook.com/profile.php?id=61578058671982"
@@ -294,7 +311,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
               Facebook
             </a>
             <a
@@ -303,7 +320,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-8 py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg>
               YouTube
             </a>
             <a
@@ -312,7 +329,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-8 py-4 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
               LinkedIn
             </a>
           </div>

@@ -14,37 +14,11 @@ const config: Config = {
         'xs': '475px',
       },
       colors: {
-        // WCV Brand Colors - Orange, Black, White Theme
+        // New Design System: Earthen Vitality
         brand: {
-          orange: {
-            50: "#fff7ed",
-            100: "#ffedd5",
-            200: "#fed7aa",
-            300: "#fdba74",
-            400: "#fb923c",
-            500: "#f97316", // Primary Orange
-            600: "#ea580c",
-            700: "#c2410c",
-            800: "#9a3412",
-            900: "#7c2d12",
-            950: "#431407",
-          },
-          black: {
-            50: "#fafafa",
-            100: "#f4f4f5",
-            200: "#e4e4e7",
-            300: "#d4d4d8",
-            400: "#a1a1aa",
-            500: "#71717a",
-            600: "#52525b",
-            700: "#3f3f46",
-            800: "#27272a",
-            900: "#18181b", // Primary Black
-            950: "#0a0a0a",
-          },
-        },
-        // Alias for easier use (maps to orange)
-        primary: {
+          primary: '#EA580C', // Rich Orange (Base)
+          secondary: '#0F766E', // Deep Teal (Growth/Balance)
+          accent: '#FDBA74', // Soft Orange
           50: "#fff7ed",
           100: "#ffedd5",
           200: "#fed7aa",
@@ -55,21 +29,13 @@ const config: Config = {
           700: "#c2410c",
           800: "#9a3412",
           900: "#7c2d12",
+          950: "#431407",
         },
-        // Secondary stays as neutral grays
-        secondary: {
-          50: "#fafafa",
-          100: "#f4f4f5",
-          200: "#e4e4e7",
-          300: "#d4d4d8",
-          400: "#a1a1aa",
-          500: "#71717a",
-          600: "#52525b",
-          700: "#3f3f46",
-          800: "#27272a",
-          900: "#18181b",
+        surface: {
+          light: '#FFFCF8', // Warm Cream
+          dark: '#0F172A', // Deep Slate/Midnight
         },
-        // Neutral grays for text and backgrounds
+        // Keeping neutrals for utility
         neutral: {
           50: "#fafafa",
           100: "#f5f5f5",
@@ -80,37 +46,18 @@ const config: Config = {
           600: "#525252",
           700: "#404040",
           800: "#262626",
-          900: "#171717", // Near black
+          900: "#171717",
           950: "#0a0a0a",
         },
       },
+      textColor: {
+        primary: "var(--text-primary)",
+        secondary: "var(--text-secondary)",
+        tertiary: "var(--text-tertiary)",
+      },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-poppins)", "system-ui", "sans-serif"],
-      },
-      fontSize: {
-        xs: ["0.75rem", { lineHeight: "1rem" }],
-        sm: ["0.875rem", { lineHeight: "1.25rem" }],
-        base: ["1rem", { lineHeight: "1.5rem" }],
-        lg: ["1.125rem", { lineHeight: "1.75rem" }],
-        xl: ["1.25rem", { lineHeight: "1.75rem" }],
-        "2xl": ["1.5rem", { lineHeight: "2rem" }],
-        "3xl": ["1.875rem", { lineHeight: "2.25rem" }],
-        "4xl": ["2.25rem", { lineHeight: "2.5rem" }],
-        "5xl": ["3rem", { lineHeight: "1" }],
-        "6xl": ["3.75rem", { lineHeight: "1" }],
-        "7xl": ["4.5rem", { lineHeight: "1" }],
-      },
-      spacing: {
-        xs: "0.5rem",
-        sm: "1rem",
-        md: "1.5rem",
-        lg: "2rem",
-        xl: "2.5rem",
-        "2xl": "3rem",
-        "3xl": "4rem",
-        "4xl": "5rem",
-        "5xl": "6rem",
+        sans: ["var(--font-plus-jakarta)", "system-ui", "sans-serif"],
+        display: ["var(--font-outfit)", "system-ui", "sans-serif"],
       },
       borderRadius: {
         xs: "0.25rem",
@@ -181,9 +128,9 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        'gradient-orange': 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
-        'gradient-orange-radial': 'radial-gradient(circle, #f97316 0%, #ea580c 100%)',
-        'gradient-black': 'linear-gradient(135deg, #171717 0%, #0a0a0a 100%)',
+        'gradient-brand': 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
+        'gradient-dark': 'linear-gradient(135deg, #0F172A 0%, #020617 100%)',
+        'gradient-glow': 'radial-gradient(circle at center, rgba(249, 115, 22, 0.15) 0%, transparent 70%)',
       },
     },
   },

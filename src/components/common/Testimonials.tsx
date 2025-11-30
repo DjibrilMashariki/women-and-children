@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaStar, FaQuoteLeft, FaCheckCircle, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Star, Quote, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Testimonial {
   name: string;
@@ -147,13 +147,12 @@ export const Testimonials: React.FC = () => {
                 {/* Star Rating */}
                 <div className="flex gap-1 mt-4">
                   {[...Array(5)].map((_, i) => (
-                    <FaStar
+                    <Star
                       key={i}
-                      className={`w-5 h-5 ${
-                        i < activeTestimonial.rating
-                          ? "text-amber-400"
+                      className={`w-5 h-5 ${i < activeTestimonial.rating
+                          ? "text-amber-400 fill-amber-400"
                           : "text-neutral-300"
-                      }`}
+                        }`}
                     />
                   ))}
                 </div>
@@ -161,14 +160,14 @@ export const Testimonials: React.FC = () => {
 
               {/* Right: Quote */}
               <div className="md:col-span-3 flex flex-col justify-center">
-                <FaQuoteLeft className="text-orange-200 dark:text-orange-900 w-12 h-12 mb-4" />
+                <Quote className="text-orange-200 dark:text-orange-900 w-12 h-12 mb-4" />
                 <blockquote className="text-2xl leading-relaxed text-neutral-800 mb-6 dark:text-neutral-100">
                   &ldquo;{activeTestimonial.quote}&rdquo;
                 </blockquote>
-                
+
                 {activeTestimonial.verified && (
                   <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">
-                    <FaCheckCircle className="w-5 h-5" />
+                    <CheckCircle className="w-5 h-5" />
                     <span className="text-sm font-semibold">Verified Review</span>
                   </div>
                 )}
@@ -182,14 +181,14 @@ export const Testimonials: React.FC = () => {
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg border border-neutral-200 flex items-center justify-center hover:bg-orange-50 hover:border-orange-300 transition-all duration-300 dark:bg-neutral-800 dark:border-neutral-700 dark:hover:bg-neutral-700"
             aria-label="Previous testimonial"
           >
-            <FaChevronLeft className="text-neutral-700 dark:text-neutral-300" />
+            <ChevronLeft className="text-neutral-700 dark:text-neutral-300" />
           </button>
           <button
             onClick={nextTestimonial}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg border border-neutral-200 flex items-center justify-center hover:bg-orange-50 hover:border-orange-300 transition-all duration-300 dark:bg-neutral-800 dark:border-neutral-700 dark:hover:bg-neutral-700"
             aria-label="Next testimonial"
           >
-            <FaChevronRight className="text-neutral-700 dark:text-neutral-300" />
+            <ChevronRight className="text-neutral-700 dark:text-neutral-300" />
           </button>
 
           {/* Dots Navigation */}
@@ -198,11 +197,10 @@ export const Testimonials: React.FC = () => {
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === activeIndex
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${index === activeIndex
                     ? "bg-orange-600 w-8"
                     : "bg-neutral-300 hover:bg-neutral-400"
-                }`}
+                  }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
             ))}
